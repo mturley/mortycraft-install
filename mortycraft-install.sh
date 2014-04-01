@@ -1,5 +1,4 @@
 #!/bin/bash
-su
 apt-get update
 apt-get upgrade
 apt-get install -y python-software-properties
@@ -15,9 +14,8 @@ cd /var/www/
 git clone https://github.com/mturley/mortycraft-www.git
 mv mortycraft-www/* .
 rmdir mortycraft-www
-useradd -D minecraft
-su minecraft
-cd
+adduser -D minecraft
+cd /home/minecraft/
 wget https://googledrive.com/host/0ByQ0db6sAcHzOTNhMEdScEZsWFk -O mortycraft.tgz
 tar xzvf mortycraft.tgz
 mv minecraft/* .
